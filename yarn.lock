@@ -1046,18 +1046,6 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@tarojs/taro@2.2.17":
-  version "2.2.17"
-  resolved "https://registry.nlark.com/@tarojs/taro/download/@tarojs/taro-2.2.17.tgz?cache=0&sync_timestamp=1622535919886&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40tarojs%2Ftaro%2Fdownload%2F%40tarojs%2Ftaro-2.2.17.tgz#78a95dc4e91ab4e4580205464ae684f32b612fa4"
-  integrity sha1-eKldxOkatORYAgVGSuaE8ythL6Q=
-  dependencies:
-    "@tarojs/utils" "2.2.17"
-
-"@tarojs/utils@2.2.17":
-  version "2.2.17"
-  resolved "https://registry.npm.taobao.org/@tarojs/utils/download/@tarojs/utils-2.2.17.tgz#d6e4b808e3d7f984e8e5671a33e6f02ad2042651"
-  integrity sha1-1uS4COPX+YTo5WcaM+bwKtIEJlE=
-
 "@types/estree@*":
   version "0.0.47"
   resolved "https://registry.nlark.com/@types/estree/download/@types/estree-0.0.47.tgz?cache=0&sync_timestamp=1621240967551&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Festree%2Fdownload%2F%40types%2Festree-0.0.47.tgz#d7a51db20f0650efec24cd04994f523d93172ed4"

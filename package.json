@@ -1,13 +1,13 @@
 {
-  "name": "decorate-wxios",
-  "version": "0.0.0",
+  "name": "taro-wxios",
+  "version": "0.1.0",
   "description": "http for taro",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "",
     "watch": "rollup -c -w",
-    "release": "",
+    "release": "npm run build & npm publish",
     "build": "rm -rf ./dist && rollup -c"
   },
   "repository": {
@@ -50,6 +50,6 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "@tarojs/taro": "2.2.17",
+    "@tarojs/taro": "2.2.17"
   }
 }
