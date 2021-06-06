@@ -2,7 +2,7 @@
  * @Author: sam.li
  * @Date: 2021-06-01 15:37:25
  * @LastEditors: sam.li
- * @LastEditTime: 2021-06-01 17:09:25
+ * @LastEditTime: 2021-06-06 09:40:07
  */
 import InterceptorManger from './interceptorManger';
 import dispatchRequest from './dispatchRequest';
@@ -17,6 +17,7 @@ function Wxios(config) {
         request: new InterceptorManger(),
         response: new InterceptorManger(),
     };
+    this.getTaskCallBackQueue = [];
 }
 
 /**
@@ -24,6 +25,7 @@ function Wxios(config) {
  * @param {Object} config
  */
 Wxios.prototype.request = function request(config) {
+    let _httpPromiseIndex = 0; // 
     if (typeof config === 'string') {
         config = Object.assign(
             {
@@ -47,6 +49,7 @@ Wxios.prototype.request = function request(config) {
     var promise = Promise.resolve(config);
 
     this.interceptors.request.forEach((interceptor) => {
+        _httpPromiseIndex++;
         chain.unshift(interceptor.fulfilled, interceptor.rejected);
     });
 
@@ -56,6 +59,10 @@ Wxios.prototype.request = function request(config) {
 
     while (chain.length) {
         promise = promise.then(chain.shift(), chain.shift());
+        _httpPromiseIndex--;
+        if (_httpPromiseIndex === 0) {
+            this.getTaskCallBackQueue.map(callBack => {callBack(promise)}); // 执行注入的获取task回调函数
+        }
     }
 
     return promise;
@@ -67,5 +74,10 @@ Wxios.prototype.request = function request(config) {
         return this.request(_config);
     };
 });
+
+// 注入获取task的方法
+Wxios.prototype.getTask = function(callBack) {
+    this.getTaskCallBackQueue.push(callBack);
+};
 
 export default Wxios;

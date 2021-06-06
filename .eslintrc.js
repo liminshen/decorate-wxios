@@ -2,7 +2,7 @@
  * @Author: sam.li
  * @Date: 2021-06-01 14:42:02
  * @LastEditors: sam.li
- * @LastEditTime: 2021-06-01 14:46:00
+ * @LastEditTime: 2021-06-06 09:26:53
  */
 // http://eslint.org/docs/user-guide/configuring
 
@@ -15,8 +15,6 @@ module.exports = {
         sourceType: 'module',
     },
     globals: {
-        WebViewJavascriptBridge: 'readonly',
-        WVJBCallbacks: 'readonly',
     },
     rules: {
         'prettier/prettier': [

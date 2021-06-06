@@ -104,7 +104,8 @@ http.post('url',data[,config]);
 
 ## 可以配置的参数config
 
-1. timeout 超时设置
-2. headers 头部参数设置
-3. header.common 头部公共参数
-
+1. timeout[number] 超时设置,单位毫秒ms
+2. headers[object] 头部参数设置
+3. headers.common[object] 头部公共参数
+4. extends[object] 拓展字段
+   1. isUpload[boolean] 是否上传文件, 假如填ture,使用Taro.upload;data，里面必须传filepath;filename可选，默认值为'file';
